@@ -221,7 +221,7 @@ class Update(Child):
 
     def default_data(self):
         self.db.c.execute('''SELECT * FROM db WHERE id=?''',
-                          (self.view.tree.set(self.view.tree.selection()[0] '#1'),))
+                          (self.view.tree.set(self.view.tree.selection()[0], '#1'),))
         # получаем доступ к первой записи из выборки
         row = self.db.c.fetchone()
         self.entry_name.insert(0, row[1])
